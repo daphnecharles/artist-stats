@@ -1,11 +1,23 @@
 {
     "version": 2,
     "builds": [
-      { "src": "api/server.js", "use": "@vercel/node" },
-      { "src": "frontend/package.json", "use": "@vercel/static-build" }
+      {
+        "src": "api/server.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "frontend/package.json",
+        "use": "@vercel/static-build"
+      }
     ],
-    "rewrites": [
-      { "source": "/scrape/:match*", "destination": "/api/:match*" },
-      { "source": "/spotify/:match*", "destination": "/api/:match*" }
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "/api/server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/frontend/$1"
+      }
     ]
   }

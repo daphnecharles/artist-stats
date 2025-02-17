@@ -217,7 +217,7 @@ page.on('request', (req) => {
       
       
       // Express route to scrape Spotify page
-      app.get('/spotify/scrape', async (req, res) => {
+      app.get('/api/scrape/spotify', async (req, res) => {
         const { url } = req.query;
         try {
           const data = await scrapeSpotify(url);
@@ -231,7 +231,7 @@ page.on('request', (req) => {
   /**
  * Express Route: Get TikTok Data
  */
-app.get("/scrape/basic/tiktok/:username", async (req, res) => {
+app.get("/api/scrape/tiktok/:username", async (req, res) => {
     const { username } = req.params;
     try {
         const data = await scrapeTikTok(username);
@@ -246,7 +246,7 @@ app.get("/scrape/basic/tiktok/:username", async (req, res) => {
 /**
  * Express Route: Get Instagram Data
  */
-app.get("/scrape/basic/instagram/:username", async (req, res) => {
+app.get("/api/scrape/instagram/:username", async (req, res) => {
     const { username } = req.params;
     try {
         const data = await scrapeInstagram(username);

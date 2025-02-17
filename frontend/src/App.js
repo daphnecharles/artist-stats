@@ -29,9 +29,9 @@ export default function App() {
     const formattedName = formatUsername(artistName);
     try {
       const [instaRes, tiktokRes, spotifyRes] = await Promise.allSettled([
-        axios.get(`/scrape/basic/instagram/${formattedName}`),
-        axios.get(`/scrape/basic/tiktok/${formattedName}`),
-        axios.get(`/spotify/scrape?url=${encodeURIComponent(spotifyUrl)}`)
+        axios.get(`/api/scrape/instagram/${formattedName}`),
+        axios.get(`/api/scrape/tiktok/${formattedName}`),
+        axios.get(`/api/scrape/spotify?url=${encodeURIComponent(spotifyUrl)}`)
       ]);
      
      
