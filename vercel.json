@@ -5,7 +5,7 @@
       { "src": "frontend/package.json", "use": "@vercel/static-build" }
     ],
     "rewrites": [
-      { "source": "/scrape/(.*)", "destination": "/api/server.js" },
-      { "source": "/spotify/(.*)", "destination": "/api/server.js" }
+      { "source": "/scrape/:match*", "destination": "/api/:match*" },
+      { "source": "/spotify/:match*", "destination": "/api/:match*" }
     ]
   }
