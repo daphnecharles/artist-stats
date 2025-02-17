@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, Input, Button, VStack, Text, Heading, Spinner, Container, Image, HStack } from '@chakra-ui/react';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = 'https://artist-stats.vercel.app';
 
 export default function App() {
   const [artistName, setArtistName] = useState('');
